@@ -209,6 +209,123 @@ section {
     margin: 0 auto 60px;
 }
 
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 102, 255, 0.08);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+/* Social Proof */
+.social-proof {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.tooltip-group {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip-item {
+    position: relative;
+    margin-right: -15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tooltip-item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tooltip-item:hover {
+    transform: scale(1.15) translateY(-5px);
+    z-index: 10;
+}
+
+.tooltip-card {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #000000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.tooltip-card::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #000000;
+}
+
+.tooltip-item:hover .tooltip-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-card strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.tooltip-card span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.social-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .social-proof {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+    .social-text {
+        font-size: 0.85rem;
+    }
+}
+
 .hero h1 {
     font-size: 3.5rem;
     line-height: 1.1;
