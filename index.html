@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões Infinitas - Matemática | Domine sua Banca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo" class="logo-img">
+                Questões <span>Infinitas - Matemática</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">O Futuro da Sua Aprovação</span>
+                <h1>Questões Infinitas de Matemática para Você Passar de Vez.</h1>
+                <p>Pratique sem limite com questões no estilo das principais bancas. Quanto mais você treina, mais fácil fica — e mais próximo da sua vaga você chega.</p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="mockup-invitation">
+                    <span class="pulse"></span> Veja como é por dentro e teste agora mesmo
+                </div>
+                <div class="mockup-frame generator-box">
+                    <div class="mockup-header">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="search-bar">Questões Infinitas - Matemática</div>
+                    </div>
+                    <div class="mockup-content">
+                        <!-- Generator Form -->
+                        <div id="generator-form">
+                            <div class="generator-grid">
+                                <div class="input-group">
+                                    <label>Banca do Concurso</label>
+                                    <select id="select-banca">
+                                        <option value="Cebraspe (CESPE)">Cebraspe (CESPE)</option>
+                                        <option value="FGV">FGV</option>
+                                        <option value="VUNESP">VUNESP</option>
+                                        <option value="FCC">FCC</option>
+                                        <option value="ESAF">ESAF</option>
+                                        <option value="IBFC">IBFC</option>
+                                        <option value="AOCP">AOCP</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Matéria / Tema (Opcional)</label>
+                                    <select id="select-assunto">
+                                        <option value="Qualquer Tema (Aleatório)">Qualquer Tema (Aleatório)</option>
+                                        <option value="Porcentagem">Porcentagem</option>
+                                        <option value="Razão e Proporção">Razão e Proporção</option>
+                                        <option value="Regra de Três">Regra de Três</option>
+                                        <option value="Matemática Financeira">Matemática Financeira</option>
+                                        <option value="Probabilidade">Probabilidade</option>
+                                        <option value="Análise Combinatória">Análise Combinatória</option>
+                                        <option value="Estatística">Estatística</option>
+                                        <option value="Equações">Equações</option>
+                                        <option value="Geometria">Geometria</option>
+                                        <option value="Trigonometria">Trigonometria</option>
+                                        <option value="Lógica Matemática">Lógica Matemática</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Nível de Dificuldade</label>
+                                    <select id="select-nivel">
+                                        <option value="Fácil">Fácil</option>
+                                        <option value="Médio">Médio</option>
+                                        <option value="Difícil">Difícil</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="generator-footer">
+                                <button id="btn-generate" class="btn btn-app-purple">Gerar Questões</button>
+                            </div>
+                        </div>
+
+                        <!-- Result Area (Hidden by default) -->
+                        <div id="result-area" class="hidden">
+                            <div class="generating-status">
+                                <div class="spinner"></div>
+                                <p>IA analisando padrões da banca...</p>
+                            </div>
+                            <div class="blurred-question hidden">
+                                <div class="question-header">
+                                    <span class="bank-tag" id="res-banca">FGV</span>
+                                    <span class="level-tag" id="res-nivel">Nível: Médio</span>
+                                </div>
+                                <div class="question-body">
+                                    <div class="blur-overlay">
+                                    <div class="cta-overlay">
+                                            <p><strong>Questões geradas com sucesso!</strong><br>Para liberar, assine agora e tenha acesso total ao seu simulado exclusivo.</p>
+                                            <a href="#precos" class="btn btn-primary btn-sm">Liberar Meu Acesso</a>
+                                        </div>
+                                    </div>
+                                    <div class="skeleton-text">
+                                        <div class="skeleton line-1"></div>
+                                        <div class="skeleton line-2"></div>
+                                        <div class="skeleton line-3"></div>
+                                        <div class="skeleton line-2" style="width: 80%"></div>
+                                    </div>
+                                    <div class="skeleton-options">
+                                        <div class="skeleton-opt"></div>
+                                        <div class="skeleton-opt"></div>
+                                        <div class="skeleton-opt"></div>
+                                        <div class="skeleton-opt"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 60px;">
+                <a href="#precos" class="btn btn-primary btn-lg">Quero minha Aprovação Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="boards section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>O DNA das Bancas em Suas Mãos</h2>
+                <p>Nossa IA mapeia e escaneia cada concurso para gerar questões 100% inéditas para cada banca.</p>
+            </div>
+            <div class="boards-wrapper">
+                <div class="boards-track">
+                    <div class="board-item">FGV</div>
+                    <div class="board-item">Cebraspe</div>
+                    <div class="board-item">Vunesp</div>
+                    <div class="board-item">FCC</div>
+                    <div class="board-item">Cesgranrio</div>
+                    <div class="board-item">IDECAN</div>
+                    <div class="board-item">IBFC</div>
+                    <div class="board-item">IADES</div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="board-item">FGV</div>
+                    <div class="board-item">Cebraspe</div>
+                    <div class="board-item">Vunesp</div>
+                    <div class="board-item">FCC</div>
+                    <div class="board-item">Cesgranrio</div>
+                    <div class="board-item">IDECAN</div>
+                    <div class="board-item">IBFC</div>
+                    <div class="board-item">IADES</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Você já sentiu que está "andando em círculos" nos seus estudos?</h2>
+                <p>Muitos concurseiros cometem o erro fatal de resolver as mesmas questões de sempre. O resultado?</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="card-icon">1</div>
+                    <h3>Falsa Sensação de Conhecimento</h3>
+                    <p>Você acerta porque lembra da resposta, não porque aprendeu a lógica.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="card-icon">2</div>
+                    <h3>O "Branco" na Hora da Prova</h3>
+                    <p>Quando a banca muda uma vírgula na questão, você trava.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="card-icon">3</div>
+                    <h3>Esgotamento de Material</h3>
+                    <p>Você já resolveu tudo o que existe e não tem mais onde praticar.</p>
+                </div>
+            </div>
+            <div class="news-clipping">
+                <div class="news-header">
+                    <div class="live-indicator"><span class="dot"></span> AO VIVO</div>
+                    <div class="breaking-news-label">URGENTE: EDUCAÇÃO</div>
+                </div>
+                <div class="news-body">
+                    <p class="news-headline">"Matemática é a matéria que mais elimina candidatos. Não deixe que ela seja o seu obstáculo."</p>
+                    <div class="news-footer">Portal Questões Infinitas • Há 2 minutos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution section-reveal bg-light">
+        <div class="container solution-grid">
+            <div class="solution-visual">
+                <div class="ia-pulse">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-core">IA</div>
+                </div>
+            </div>
+            <div class="solution-content">
+                <h2>Conheça o Questões Infinitas - Matemática: O seu examinador particular 24h por dia.</h2>
+                <p>Nossa tecnologia de IA analisa milhares de provas anteriores para entender o padrão de cada banca. O resultado são questões 100% inéditas que desafiam seu raciocínio e garantem que você esteja preparado para qualquer surpresa.</p>
+                <ul class="benefit-list">
+                    <li><strong>Inéditas:</strong> Nunca mais resolva a mesma questão duas vezes.</li>
+                    <li><strong>DNA da Banca:</strong> Estilo, vocabulário e armadilhas idênticas às reais.</li>
+                    <li><strong>Foco Total:</strong> Escolha o tema exato que você precisa reforçar.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="social section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Resultados Reais</span>
+                <h2>Quem usa, aprova (e passa).</h2>
+                <p>Junte-se a centenas de concurseiros que pararam de decorar e começaram a aprender.</p>
+            </div>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-grid-animated">
+                    <!-- Column 1 -->
+                    <div class="testimonial-column col-1">
+                        <div class="testimonial-track">
+                            <!-- Set 1 -->
+                            <div class="testimonial-card">
+                                <p>"Gente, surreal. Eu já tinha decorado as questões de RLM e Matemática do Qconcursos de tanto fazer. O Questões Infinitas - Matemática me salvou porque as questões são 'frescas', parece que a banca acabou de postar. Vale cada centavo."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Gaby Oliveira">
+                                    <div class="author-info">
+                                        <strong>Gaby Oliveira</strong>
+                                        <span>PRF em breve</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"O que eu mais curti foi que dá pra filtrar direto no que eu sou ruim. Geometria tava me matando, mas de tanto gerar questão inédita aqui, comecei a pegar o jeito. O design é limpo, não trava, nota 10."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Marcos Simbora">
+                                    <div class="author-info">
+                                        <strong>Marcos "Simbora"</strong>
+                                        <span>Focada na Receita</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicate for loop -->
+                            <div class="testimonial-card">
+                                <p>"Gente, surreal. Eu já tinha decorado as questões de RLM e Matemática do Qconcursos de tanto fazer. O Questões Infinitas - Matemática me salvou porque as questões são 'frescas', parece que a banca acabou de postar. Vale cada centavo."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Gaby Oliveira">
+                                    <div class="author-info">
+                                        <strong>Gaby Oliveira</strong>
+                                        <span>PRF em breve</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"O que eu mais curti foi que dá pra filtrar direto no que eu sou ruim. Geometria tava me matando, mas de tanto gerar questão inédita aqui, comecei a pegar o jeito. O design é limpo, não trava, nota 10."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Marcos Simbora">
+                                    <div class="author-info">
+                                        <strong>Marcos "Simbora"</strong>
+                                        <span>Focada na Receita</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="testimonial-column col-2">
+                        <div class="testimonial-track">
+                             <!-- Set 1 -->
+                            <div class="testimonial-card">
+                                <p>"Confesso que fiquei com medo de ser só um 'copy-paste', mas as questões da FGV aqui são iguaizinhas. As pegadinhas de Porcentagem são no mesmo nível. Me ajudou demais na revisão final."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Leticia F.">
+                                    <div class="author-info">
+                                        <strong>Leticia F.</strong>
+                                        <span>Aprovada em Pref.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"Pra quem estuda pelo celular no busão igual eu, esse site é o melhor. Roda liso e não fica bugando. As questões de Regra de Três me ajudaram a subir minha média pra 90%."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="João Paulo">
+                                    <div class="author-info">
+                                        <strong>João Paulo</strong>
+                                        <span>GCM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicate for loop -->
+                            <div class="testimonial-card">
+                                <p>"Confesso que fiquei com medo de ser só um 'copy-paste', mas as questões da FGV aqui são iguaizinhas. As pegadinhas de Porcentagem são no mesmo nível. Me ajudou demais na revisão final."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Leticia F.">
+                                    <div class="author-info">
+                                        <strong>Leticia F.</strong>
+                                        <span>Aprovada em Pref.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"Pra quem estuda pelo celular no busão igual eu, esse site é o melhor. Roda liso e não fica bugando. As questões de Regra de Três me ajudaram a subir minha média pra 90%."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="João Paulo">
+                                    <div class="author-info">
+                                        <strong>João Paulo</strong>
+                                        <span>GCM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="testimonial-column col-3">
+                        <div class="testimonial-track">
+                             <!-- Set 1 -->
+                            <div class="testimonial-card">
+                                <p>"Finalmente algo que não repete questão! O 'Gerar' é meu botão favorito kkkk. Parece que tenho um professor particular criando prova pra mim todo dia. Recomendo muito o plano anual, compensa demais."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Beatriz Lima">
+                                    <div class="author-info">
+                                        <strong>Beatriz Lima</strong>
+                                        <span>TJs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"Tava perdidasso em Matemática, mas os filtros de dificuldade me ajudaram a ir subindo degrau por degrau. Hoje já encaro as 'Médias' e 'Difíceis' sem medo. Top!"</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Douglas Silva">
+                                    <div class="author-info">
+                                        <strong>Douglas Silva</strong>
+                                        <span>Iniciante</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicate for loop -->
+                            <div class="testimonial-card">
+                                <p>"Finalmente algo que não repete questão! O 'Gerar' é meu botão favorito kkkk. Parece que tenho um professor particular criando prova pra mim todo dia. Recomendo muito o plano anual, compensa demais."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Beatriz Lima">
+                                    <div class="author-info">
+                                        <strong>Beatriz Lima</strong>
+                                        <span>TJs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"Tava perdidasso em Matemática, mas os filtros de dificuldade me ajudaram a ir subindo degrau por degrau. Hoje já encaro as 'Médias' e 'Difíceis' sem medo. Top!"</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150" class="author-image" alt="Douglas Silva">
+                                    <div class="author-info">
+                                        <strong>Douglas Silva</strong>
+                                        <span>Iniciante</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section-reveal bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Funcionalidades para sua Aprovação</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="spotlight"></div>
+                    <div class="feature-icon">🔍</div>
+                    <h3>Filtro Inteligente</h3>
+                    <p>Selecione Banca, Matéria e Nível de Dificuldade.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="spotlight"></div>
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Modo Simulado</h3>
+                    <p>Gere listas de exercícios cronometradas.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="spotlight"></div>
+                    <div class="feature-icon">💡</div>
+                    <h3>Respostas Comentadas</h3>
+                    <p>Entenda o erro e aprenda a solução correta (Em breve).</p>
+                </div>
+                <div class="feature-item">
+                    <div class="spotlight"></div>
+                    <div class="feature-icon">📱</div>
+                    <h3>Acesso Multiplataforma</h3>
+                    <p>Estude no PC, Tablet ou Celular.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Comparativo</span>
+                <h2>Por que somos a sua melhor escolha?</h2>
+                <p>Compare e veja por que o Questões Infinitas é o segredo dos aprovados em Matemática.</p>
+            </div>
+            <div class="comparison-container">
+                <div class="vs-badge">VS</div>
+                
+                <!-- Competitors -->
+                <div class="comparison-column competitors">
+                    <div class="column-header">
+                        <h3>Plataformas Tradicionais</h3>
+                        <p>Gran, Qconcursos e Outros</p>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="icon-x">✕</i>
+                            <span><strong>Questões Repetidas:</strong> Você acaba decorando as respostas de provas antigas.</span>
+                        </li>
+                        <li>
+                            <i class="icon-x">✕</i>
+                            <span><strong>Preços Absurdos:</strong> Assinaturas caras que passam de R$ 100/mês.</span>
+                        </li>
+                        <li>
+                            <i class="icon-x">✕</i>
+                            <span><strong>Interface Confusa:</strong> Excesso de informações que distraem você do estudo.</span>
+                        </li>
+                        <li>
+                            <i class="icon-x">✕</i>
+                            <span><strong>Genérico demais:</strong> "Atiram" para todas as matérias sem profundidade.</span>
+                        </li>
+                        <li>
+                            <i class="icon-x">✕</i>
+                            <span><strong>Burocracia:</strong> Muitos cliques e teoria chata antes de chegar na prática.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Us -->
+                <div class="comparison-column our-app">
+                    <div class="column-header">
+                        <h3>Questões Infinitas</h3>
+                        <p>Foco Total em Matemática</p>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="icon-check">✓</i>
+                            <span><strong>100% Inéditas:</strong> IA gera questões novas no estilo da banca todo dia.</span>
+                        </li>
+                        <li>
+                            <i class="icon-check">✓</i>
+                            <span><strong>Ultra Barato:</strong> Apenas R$ 0,66 por dia. Menos que um café.</span>
+                        </li>
+                        <li>
+                            <i class="icon-check">✓</i>
+                            <span><strong>Interface Minimalista:</strong> Foco total na questão com visual que não cansa.</span>
+                        </li>
+                        <li>
+                            <i class="icon-check">✓</i>
+                            <span><strong>Especialista:</strong> Única plataforma 100% focada em Matemática de Concurso.</span>
+                        </li>
+                        <li>
+                            <i class="icon-check">✓</i>
+                            <span><span><strong>Velocidade Máxima:</strong> Em 3 cliques você já está resolvendo seu simulado.</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="pricing section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Escolha o plano ideal para a sua aprovação.</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <span class="popular-badge">ACESSO ILIMITADO</span>
+                    <h3>Assinatura Premium</h3>
+                    <div class="price">R$ 19,90<span>/mês</span></div>
+                    <p class="persuasive-note">Apenas <strong>R$ 0,66 por dia</strong> — Menos que um cafezinho para sua aprovação.</p>
+                    <ul class="features-list">
+                        <li>Geração <strong>Infinita</strong> de Questões Inéditas.</li>
+                        <li>Acesso a Todas as Bancas (FGV, Cebraspe, Vunesp, etc).</li>
+                        <li>Simulados Cronometrados Ilimitados.</li>
+                        <li>Interface Mobile p/ Estudar em Qualquer Lugar.</li>
+                        <li><strong>Bônus:</strong> Guia de Matemática Básica (PDF).</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Quero minha Aprovação Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section-reveal bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dúvidas Frequentes</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">As questões são realmente parecidas com as da banca?</button>
+                    <div class="faq-answer">
+                        <p>Sim, nossa IA é treinada especificamente nos editais e provas passadas das maiores bancas do país.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Posso cancelar quando quiser?</button>
+                    <div class="faq-answer">
+                        <p>Sim, sem multas ou letras miúdas. O cancelamento pode ser feito a qualquer momento pelo painel do aluno.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Serve para quem está começando do zero?</button>
+                    <div class="faq-answer">
+                        <p>Com certeza! Você pode filtrar por questões "Fáceis" para construir sua base e evoluir gradualmente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer section-reveal">
+        <div class="container">
+            <h2>Pare de perder tempo com questões repetidas. Sua vaga está em jogo.</h2>
+            <a href="#precos" class="btn btn-primary btn-lg">Começar Agora!</a>
+            <div class="footer-links">
+                <p>&copy; 2024 Questões Infinitas - Matemática. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Política de Reembolso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
