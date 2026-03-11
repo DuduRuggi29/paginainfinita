@@ -86,12 +86,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo-img {
-    height: 60px; /* Tamanho natural e elegante dentro da navbar */
-    max-width: 100%; /* Garantir responsividade fluída */
+    height: 130px; /* Tamanho substancial e visível, já sem bordas brancas limitantes */
+    max-width: 100%;
     width: auto;
     object-fit: contain;
 }
@@ -1539,7 +1539,7 @@ section {
     .logo { 
         font-size: 1.1rem;
     } /* Even smaller on mobile */
-    .logo-img { height: 40px; }
+    .logo-img { height: 95px; }
     .mockup-frame { border-width: 1px; border-radius: 24px; }
     .generator-box { border-radius: 16px; }
     .input-group select { font-size: 0.9rem; padding: 12px; }
