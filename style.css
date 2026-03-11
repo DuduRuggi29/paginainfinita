@@ -87,7 +87,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 250px;
+    width: 280px; /* Aumentei de 250px para 280px para caber o texto completo */
     height: 60px;
     overflow: hidden;
 }
@@ -98,7 +98,7 @@ section {
     object-fit: contain;
     mix-blend-mode: multiply;
     transform: scale(3.5);
-    transform-origin: center;
+    transform-origin: center right; /* Mudando o origin para garantir que alinhe as bordas certas se precisar, mas no caso é melhor center */
 }
 
 .logo span {
